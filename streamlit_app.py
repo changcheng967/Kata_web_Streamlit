@@ -82,46 +82,6 @@ lines[300] = "# maxVisits = 500\n"
 lines[302] = "maxTime = 1.0\n"
 lines[305] = "ponderingEnabled = true\n"
 
-# Apply the new rules configuration (lines 113 to 149)
-lines[113:150] = [
-    "# rules = tromp-taylor\n",
-    "\n",
-    "# By default, the \"rules\" parameter is used, but if you comment it out and\n",
-    "# uncomment one option in each of the sections below, you can specify an\n",
-    "# arbitrary combination of individual rules.\n",
-    "\n",
-    "# koRule = SIMPLE       # Simple ko rules (triple ko = no result)\n",
-    "koRule = POSITIONAL   # Positional superko\n",
-    "# koRule = SITUATIONAL  # Situational superko\n",
-    "\n",
-    "scoringRule = AREA       # Area scoring\n",
-    "# scoringRule = TERRITORY  # Territory scoring (special computer-friendly territory rules)\n",
-    "\n",
-    "taxRule = NONE  # All surrounded empty points are scored\n",
-    "# taxRule = SEKI  # Eyes in seki do NOT count as points\n",
-    "# taxRule = ALL   # All groups are taxed up to 2 points for the two eyes needed to live\n",
-    "\n",
-    "# Is multiple-stone suicide legal? (Single-stone suicide is always illegal).\n",
-    "# multiStoneSuicideLegal = false\n",
-    "multiStoneSuicideLegal = true  # Allow multi-stone suicide\n",
-    "\n",
-    "# \"Button go\" - the first pass when area scoring awards 0.5 points and does\n",
-    "# not count for ending the game.\n",
-    "# Allows area scoring rulesets that have far simpler rules to achieve the same\n",
-    "# final scoring precision and reward for precise play as territory scoring.\n",
-    "# hasButton = false\n",
-    "# hasButton = true\n",
-    "\n",
-    "# Is this a human ruleset where it's okay to pass before having physically\n",
-    "# captured and removed all dead stones?\n",
-    "# friendlyPassOk = false\n",
-    "friendlyPassOk = true  # Allow friendly pass\n",
-    "\n",
-    "# How handicap stones in handicap games are compensated\n",
-    "# whiteHandicapBonus = 0    # White gets no compensation for black's handicap stones (Tromp-taylor, NZ, JP)\n",
-    "# whiteHandicapBonus = N-1  # White gets N-1 points for black's N handicap stones (AGA)\n",
-    "# whiteHandicapBonus = N    # White gets N points for black's N handicap stones (Chinese)\n",
-]
 
 # Write the updated content back to the file
 with open(default_gtp_cfg_path, "w") as f:
