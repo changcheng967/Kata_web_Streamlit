@@ -5,14 +5,6 @@ import zipfile
 import gzip
 import shutil
 import json
-import psutil  # For monitoring CPU usage
-import threading  # For running CPU monitoring in a separate thread
-
-# Function to monitor CPU usage
-def monitor_cpu_usage():
-    while True:
-        cpu_usage = psutil.cpu_percent(interval=1)
-        print(f"CPU Usage: {cpu_usage}%")
 
 # Step 1: Download and extract libzip5 and libssl1.1
 print("Downloading libzip5 and libssl1.1...")
@@ -175,9 +167,4 @@ command = [
     "-model", os.path.join(katago_dir, model_bin)
 ]
 
-# Start CPU monitoring in a separate thread
-cpu_monitor_thread = threading.Thread(target=monitor_cpu_usage, daemon=True)
-cpu_monitor_thread.start()
-
-# Run gtp2ogs with KataGo
 subprocess.run(command)
